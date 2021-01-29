@@ -1,8 +1,8 @@
-body {background-color: gray; padding: 2%}
-.music {background-color: white; box-sizing: border-box; border-radius: 10px; box-shadow: 5px 10px 18px #888888;}
-.movies {background-color: white; box-sizing: border-box; border-radius: 10px;}
-.coding {background-color: white; box-sizing: border-box; border-radius: 10px;}
-.interests {background-color: white; box-sizing: border-box; border-radius: 10px;}
+body {background-color: gray; padding: 50px;-webkit-animation: animate_bg 10s;animation: animate_bg 10s;-webkit-animation-iteration-count: infinite;animation-iteration-count: infinite;}
+.music {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
+.movies {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
+.coding {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
+.interests {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
 .intro-text {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 20px; word-spacing: 2px;transition-duration:2.5s;}
 .text {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
 .title {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
@@ -15,8 +15,27 @@ body {background-color: gray; padding: 2%}
 .python {display: flex; box-sizing: border-box; padding: 0% 4% 2% 4%;}
 .python img {height: 150px; width: 150px;border-style: dashed; border-color: gray; border-radius: 10px; border-width: 10%; box-sizing: border-box;}
 img:hover {width:300px;height: 300px;transition-duration:2.5s;}
-.button a {background-color: white; float: left; padding: 15px 15px; color: gray; text-decoration: None;border-radius: 10px;}
-.button a:hover {opacity: 0.5;}
+.button a {background-color: white; float: left; padding: 15px 15px; color: gray; text-decoration: None;border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;transition-duration:.5s;opacity:.9;}
+.button a:hover {opacity: 0.5;transition-duration:.5s;}
 img {width: 100px;transition-duration:2.5s;}
 .movieCovers img:hover {width:300px;height:450px;transition-duration:2.5s;}
 .firstCharachter {font-size:30px;font-family: sans-serif;}
+@keyframes animate_bg {
+    0%   {background:#f1faee;}
+    20%  {background:#a8dadc;}
+    40% {background:#457b9d;}
+    60% {background:#1d3557;}
+    80% {background:#457b9d;}
+    95% {background:#a8dadc;}
+    100%   {background:#f1faee;}
+}
+
+@-webkit-keyframes animate_bg {
+  0%   {background:#f1faee;}
+  20%  {background:#a8dadc;}
+  40% {background:#457b9d;}
+  60% {background:#1d3557;}
+  80% {background:#457b9d;}
+  95% {background:#a8dadc;}
+  100%   {background:#f1faee;}
+}
