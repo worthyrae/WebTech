@@ -7,7 +7,7 @@ body {background-color: gray; padding: 50px;-webkit-animation: animate_bg 10s;an
 .intro-text a {transition-duration:1.5s;}
 .text {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
 .title {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
-.intro a {color: gray; text-decoration: none;}
+.intro a {color: gray; text-decoration: none;transition-duration:1.5s;}
 .intro a:hover {font-size:30px;transition-duration:1.5s;}
 .albumCovers {display: flex; box-sizing: border-box; padding: 0% 4% 2% 4%;}
 .albumCovers img {height: 100px; border-radius: 5%;transition-duration:2.5s;}
