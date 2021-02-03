@@ -1,3 +1,7 @@
 body {
+  font-family: 'Ubuntu';
+}
+@font-face {
   font-family: 'Ubuntu'; 
   src: url('Ubuntu_Regular.ttf')
+}
