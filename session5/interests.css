@@ -3,10 +3,10 @@ body {background-color: gray; padding: 50px;-webkit-animation: animate_bg 10s;an
 .movies {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
 .coding {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
 .interests {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
-.intro-text {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 20px; word-spacing: 2px;transition-duration:2.5s;}
+.intro-text {color: gray;  box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 20px; word-spacing: 2px;transition-duration:2.5s;}
 .intro-text a {transition-duration:1.5s;}
-.text {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
-.title {color: gray; font-family: Arial, Helvetica, sans-serif; box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
+.text {color: gray;  box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
+.title {color: gray;  box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
 .intro a {color: gray; text-decoration: none;transition-duration:1.5s;}
 .intro a:hover {font-size:30px;transition-duration:1.5s;}
 .albumCovers {display: flex; box-sizing: border-box; padding: 0% 4% 2% 4%;}
