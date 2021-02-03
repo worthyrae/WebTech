@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu;
   -webkit-animation: animate_bg 10s;
   animation: animate_bg 10s;
   -webkit-animation-iteration-count: infinite;
@@ -106,7 +106,7 @@ p {
 
 .button h3 {
   text-decoration: None;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu;
   color: gray;
 }
 
