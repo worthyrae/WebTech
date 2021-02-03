@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   box-sizing: border-box;
-  font-family: 'Ubuntu;
   -webkit-animation: animate_bg 10s;
   animation: animate_bg 10s;
   -webkit-animation-iteration-count: infinite;
