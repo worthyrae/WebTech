@@ -5,8 +5,8 @@ body {background-color: gray; padding: 50px;-webkit-animation: animate_bg 10s;an
 .interests {background-color: white; box-sizing: border-box; border-radius: 10px;box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;opacity:.9;}
 .intro-text {color: gray;  box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 20px; word-spacing: 2px;transition-duration:2.5s;}
 .intro-text a {transition-duration:1.5s;}
-.text {color: gray;  box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
-.title {color: gray;  box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
+.text {color: gray; box-sizing: border-box; padding: 0% 4% 2% 4%; font-size: 100%; word-spacing: 2px;}
+.title {color: gray; box-sizing: border-box; padding: 2% 2% 0% 2%; font-size: 250%;}
 .intro a {color: gray; text-decoration: none;transition-duration:1.5s;}
 .intro a:hover {font-size:30px;transition-duration:1.5s;}
 .albumCovers {display: flex; box-sizing: border-box; padding: 0% 4% 2% 4%;}
@@ -20,7 +20,7 @@ img:hover {width:300px;height: 300px;transition-duration:2.5s;}
 .button a:hover {opacity: 0.5;transition-duration:.5s;}
 img {width: 100px;transition-duration:2.5s;}
 .movieCovers img:hover {width:300px;height:450px;transition-duration:2.5s;}
-.firstCharachter {font-size:30px;font-family: sans-serif;}
+.firstCharachter {font-size:30px;}
 @keyframes animate_bg {
     0%   {background:#f1faee;}
     16%  {background:#a8dadc;}
