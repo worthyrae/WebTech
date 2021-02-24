@@ -1,0 +1,60 @@
+Term Project Proposal
+Worthy Rae
+2/2/21
+
+Introduction: Music streaming has emerged within the past 10 years and has completely redesigned the music industry. Instead of looking at how many sales an album recieved, it is now how many streams did an album recieve. A single stream represents a person listening to a song on a streaming platform (ie. Spotify, Youtube, Apple Music). I have been very curious about how music streaming data can be visualized and accessed by the public instead of being only visible to large streaming companies and record labels. Over the summer I designed a python based RPA that collects daily cumulative streaming numbers for the 2000 most popular albums released in the past two years.
+
+Objective: 
+The purpose of the website will be to display streaming data relating to current music projects being released. I have desined a python based RPA that collects daily streaming information and adds it to a database. I will be querying the information from the database and displaying it on the website. Users will be able to interact as well as filter the data. I hope to learn more about integrating data from databases into websites through this process. 
+
+Pages: 
+Home - Home page that features small data exerpts from data and projections pages as well as brief intro text
+Data - Page dedicated to displaying streaming data from database
+Projections - Page dedicated to displaying projections of album performances (data sourced from database)
+How It Works - Explanation of how we collect our streaming data / generate projections
+Data Detailed - When you click on a specific item on the data page, it will bring you to a page that shows more detailed information regarding the streaming data of the given item
+Projection Detailed - When you click on a specific item on the projections page, it will bring you to a page that shows more detailed information regarding the projections of the given item
+About - Page that tells the user who we are and our mission
+Contact - Page that tells user how to contact us
+
+Technical Components:
+MySQL - Store and query data
+PHP - Transport data from database to webpage
+HTML - Provide webpage structure
+CSS - Provide style elements of webpage
+
+Home Page:
+Intro Section - Will contain brief text about our mission and the importance of the data as well as a button to view the How It Works Page
+Data Section - Returns 5 streaming data items with greatest daily change in streaming totals. Will contain button to view full Data Page
+Projections Section - Returns 5 projection items with largest projected total streams. Will contain button to view full Projection Page
+
+Data Page:
+Year Section - Will display streaming data items with the greatest yearly stream totals
+Month Section - Will display streaming data items with the greatest monthly stream totals
+Week Section - Will display streaming data items with the greatest weekly stream totals
+Day Section - Will display streaming data items with the greatest daily stream totals
+
+Projections Page:
+Main Section - Will display projection items in order of most recent to least recent
+
+How It Works Page:
+Data Collection Section - Will display information about how we collect streams
+Projection Section - Will display information about how we generate projections for upcoming albums
+
+Data Detailed Page:
+Album Section - Will display album information like cover art, name, artist name etc.
+Graph Section - Will graphically display historical streaming performance
+
+Projections Detailed Page:
+Album Section - Will display album information like cover art, name, artist name etc.
+Projection Section - Will display projection infromation like projected total streams
+Comparrison Section - Will display similar albums with historical streaming numbers similar to the projected total streams figure
+
+About Page:
+Mission Section - Will display text regarding mission statement and industry context
+
+Contact Page - Will display basic contact form
+
+
+
+

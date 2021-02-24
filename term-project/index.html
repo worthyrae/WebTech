@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSICPLACE</title>
+    <script type="text/javascript">
+      function drawGraph( dataArr ){
+        var canvas = document.getElementById( "testCanvas" );
+        var context = canvas.getContext( "2d" );
+
+        var GRAPH_TOP = 25;
+        var GRAPH_BOTTOM = 375;
+        var GRAPH_LEFT = 25;
+        var GRAPH_RIGHT = 475;
+
+        var GRAPH_HEIGHT = 350;
+        var GRAPH_WIDTH = 450;
+
+        var arrayLen = dataArr.length;
+
+        var largest = 0;
+        for( var i = 0; i < arrayLen; i++ ){
+            if( dataArr[ i ] > largest ){
+                largest = dataArr[ i ];
+            }
+        }
+
+        context.clearRect( 0, 0, 500, 400 );
+        // set font for fillText()
+        context.font = "16px Arial";
+
+        // draw X and Y axis
+        context.beginPath();
+        context.moveTo( GRAPH_LEFT, GRAPH_BOTTOM );
+        context.lineTo( GRAPH_RIGHT, GRAPH_BOTTOM );
+        context.lineTo( GRAPH_RIGHT, GRAPH_TOP );
+        context.stroke();
+
+        // draw reference line
+        context.beginPath();
+        context.strokeStyle = "#BBB";
+        context.moveTo( GRAPH_LEFT, GRAPH_TOP );
+        context.lineTo( GRAPH_RIGHT, GRAPH_TOP );
+        // draw reference value for hours
+        context.fillText( largest, GRAPH_RIGHT + 15, GRAPH_TOP);
+        context.stroke();
+
+        // draw reference line
+        context.beginPath();
+        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
+        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
+        // draw reference value for hours
+        context.fillText( largest / 4, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP);
+        context.stroke();
+
+        // draw reference line
+        context.beginPath();
+        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
+        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
+        // draw reference value for hours
+        context.fillText( largest / 2, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP);
+        context.stroke();
+
+        // draw reference line
+        context.beginPath();
+        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
+        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
+        // draw reference value for hours
+        context.fillText( largest / 4 * 3, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP);
+        context.stroke();
+
+        // draw titles
+        context.fillText( "Day of the week", GRAPH_RIGHT / 3, GRAPH_BOTTOM + 50);
+        context.fillText( "Hours", GRAPH_RIGHT + 30, GRAPH_HEIGHT / 2);
+
+        context.beginPath();
+        context.lineJoin = "round";
+        context.strokeStyle = "black";
+
+        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT - dataArr[ 0 ] / largest * GRAPH_HEIGHT ) + GRAPH_TOP );
+        // draw reference value for day of the week
+        context.fillText( "1", 15, GRAPH_BOTTOM + 25);
+        for( var i = 1; i < arrayLen; i++ ){
+            context.lineTo( GRAPH_RIGHT / arrayLen * i + GRAPH_LEFT, ( GRAPH_HEIGHT - dataArr[ i ] / largest * GRAPH_HEIGHT ) + GRAPH_TOP );
+            // draw reference value for day of the week
+            context.fillText( ( i + 1 ), GRAPH_RIGHT / arrayLen * i, GRAPH_BOTTOM + 25);
+        }
+        context.stroke();
+      }
+
+    // test graph
+    var testValues = [ 0, 6, 8, 7, 5, 6, 5 ];
+    drawGraph( testValues );
+
+    </script>
+  </head>
+  <body>
+    <div class="full">
+      <div class="menu">
+        <img src="thumbnail_IMG_0071.jpg">
+        <div class="menu-button">
+          <a href="index.htm"><img src="circle.svg"><span>Home</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="data.htm"><img src="disc.svg"><span>Data</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="projections.htm"><img src="target.svg"><span>Projections</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="about.htm"><img src="info.svg"><span>About</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="contact.htm"><img src="smile.svg"><span>Contact</span></a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main-title">
+          <h1>Home</h1>
+        </div>
+        <div class="streams">
+          <div class="streams-sec-title">
+            <h1>Most Active</h1>
+          </div>
+          <div class="stream-headers">
+            <div class="stream-cover-h">
+              <h1>Album</h1>
+            </div>
+            <div class="total-streams-h">
+              <h1>Total Streams</h1>
+            </div>
+            <div class="stream-graph-h">
+              <h1>Performance</h1>
+            </div>
+            <div class="change-h">
+              <h1>% Change</h1>
+            </div>
+          </div>
+          <a href="#">
+          <div class="stream-item">
+            <div class="stream-cover">
+              <img src="https://f4.bcbits.com/img/a2637900166_5.jpg" alt="">
+            </div>
+            <div class="total-streams">
+              <h2>4,178,228</h2>
+            </div>
+            <div class="streams-graph" onmouseover="drawGraph()">
+              <canvas></canvas id="testCanvas" width="550" height="450">
+            </div>
+            <div class="change">
+              <h2>+3.2%</h2>
+            </div>
+
+
+
+          </div>
+          </a>
+          <a href="#">
+          <div class="stream-item">
+            <div class="stream-cover">
+              <img src="https://media.pitchfork.com/photos/5fe1fc4eb35e0eefa6919e92/1:1/w_320/Playboi-Carti.jpg" alt="">
+            </div>
+
+            <div class="total-streams">
+              <h2>267,994,317</h2>
+            </div>
+            <div class="change">
+              <h2>+2.5%</h2>
+            </div>
+          </div>
+          </a>
+          <a href="#">
+          <div class="stream-item">
+            <div class="stream-cover">
+              <img src="https://images.genius.com/07a3deb92bfe7c78f95add89edc0e5ed.1000x1000x1.png" alt="">
+            </div>
+
+            <div class="total-streams">
+              <h2>310,451,667</h2>
+            </div>
+            <div class="change">
+              <h2>+1.7%</h2>
+            </div>
+          </div>
+          </a>
+          <div class="stream-button">
+            <a href="data.htm">View All Streams</a>
+          </div>
+        </div>
+        <div class="projections">
+          <div class="projections-sec-title">
+            <h1>Newest Projections</h1>
+          </div>
+          <div class="projections-headers">
+            <div class="projection-artist">
+              <h1>Artist Image</h1>
+            </div>
+            <div class="projection-name">
+              <h1>Album Name</h1>
+            </div>
+            <div class="projection-date">
+              <h1>Release Date</h1>
+            </div>
+            <div class="projection-streams">
+              <h1>Projection</h1>
+            </div>
+            <div class="projection-period">
+              <h1>Time Period</h1>
+            </div>
+          </div>
+          <a href="#">
+            <div class="projection-item">
+              <div class="projection-artist">
+                <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTQ3NTI2OTA4NzY5MjE2MTI4/drake_photo_by_prince_williams_wireimage_getty_479503454.jpg" alt="">
+              </div>
+              <div class="projection-name">
+                <h2>Certified Lover Boy</h2>
+              </div>
+              <div class="projection-date">
+                <h2>Upcoming</h2>
+              </div>
+              <div class="projection-streams">
+                <h2>1,800,000,000</h2>
+              </div>
+              <div class="projection-period">
+                <h2>1 Year</h2>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="projection-item">
+              <div class="projection-artist">
+                <img src="https://media.newyorker.com/photos/5ad6313540fc7c73d830a3a8/1:1/w_3004,h_3004,c_limit/St-Felix-Kendrick-Lamar-Pulitzer.jpg" alt="">
+              </div>
+              <div class="projection-name">
+                <h2>Untitled</h2>
+              </div>
+              <div class="projection-date">
+                <h2>Upcoming</h2>
+              </div>
+              <div class="projection-streams">
+                <h2>1,200,000,000</h2>
+              </div>
+              <div class="projection-period">
+                <h2>1 Year</h2>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="projection-item">
+              <div class="projection-artist">
+                <img src="https://resources.tidal.com/images/74556caa/1158/4540/8923/87875a934c3e/750x750.jpg" alt="">
+              </div>
+              <div class="projection-name">
+                <h2>Slime Language 2</h2>
+              </div>
+              <div class="projection-date">
+                <h2>Upcoming</h2>
+              </div>
+              <div class="projection-streams">
+                <h2>800,000,000</h2>
+              </div>
+              <div class="projection-period">
+                <h2>1 Year</h2>
+              </div>
+            </div>
+          </a>
+          <div class="projections-button">
+            <a href="projections.htm">View All Projections</a>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+
+  </body>
+</html>
