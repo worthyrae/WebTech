@@ -5,96 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUSICPLACE</title>
-    <script type="text/javascript">
-      function drawGraph( dataArr ){
-        var canvas = document.getElementById( "testCanvas" );
-        var context = canvas.getContext( "2d" );
-
-        var GRAPH_TOP = 25;
-        var GRAPH_BOTTOM = 375;
-        var GRAPH_LEFT = 25;
-        var GRAPH_RIGHT = 475;
-
-        var GRAPH_HEIGHT = 350;
-        var GRAPH_WIDTH = 450;
-
-        var arrayLen = dataArr.length;
-
-        var largest = 0;
-        for( var i = 0; i < arrayLen; i++ ){
-            if( dataArr[ i ] > largest ){
-                largest = dataArr[ i ];
-            }
-        }
-
-        context.clearRect( 0, 0, 500, 400 );
-        // set font for fillText()
-        context.font = "16px Arial";
-
-        // draw X and Y axis
-        context.beginPath();
-        context.moveTo( GRAPH_LEFT, GRAPH_BOTTOM );
-        context.lineTo( GRAPH_RIGHT, GRAPH_BOTTOM );
-        context.lineTo( GRAPH_RIGHT, GRAPH_TOP );
-        context.stroke();
-
-        // draw reference line
-        context.beginPath();
-        context.strokeStyle = "#BBB";
-        context.moveTo( GRAPH_LEFT, GRAPH_TOP );
-        context.lineTo( GRAPH_RIGHT, GRAPH_TOP );
-        // draw reference value for hours
-        context.fillText( largest, GRAPH_RIGHT + 15, GRAPH_TOP);
-        context.stroke();
-
-        // draw reference line
-        context.beginPath();
-        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
-        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP );
-        // draw reference value for hours
-        context.fillText( largest / 4, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 * 3 + GRAPH_TOP);
-        context.stroke();
-
-        // draw reference line
-        context.beginPath();
-        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
-        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP );
-        // draw reference value for hours
-        context.fillText( largest / 2, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 2 + GRAPH_TOP);
-        context.stroke();
-
-        // draw reference line
-        context.beginPath();
-        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
-        context.lineTo( GRAPH_RIGHT, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP );
-        // draw reference value for hours
-        context.fillText( largest / 4 * 3, GRAPH_RIGHT + 15, ( GRAPH_HEIGHT ) / 4 + GRAPH_TOP);
-        context.stroke();
-
-        // draw titles
-        context.fillText( "Day of the week", GRAPH_RIGHT / 3, GRAPH_BOTTOM + 50);
-        context.fillText( "Hours", GRAPH_RIGHT + 30, GRAPH_HEIGHT / 2);
-
-        context.beginPath();
-        context.lineJoin = "round";
-        context.strokeStyle = "black";
-
-        context.moveTo( GRAPH_LEFT, ( GRAPH_HEIGHT - dataArr[ 0 ] / largest * GRAPH_HEIGHT ) + GRAPH_TOP );
-        // draw reference value for day of the week
-        context.fillText( "1", 15, GRAPH_BOTTOM + 25);
-        for( var i = 1; i < arrayLen; i++ ){
-            context.lineTo( GRAPH_RIGHT / arrayLen * i + GRAPH_LEFT, ( GRAPH_HEIGHT - dataArr[ i ] / largest * GRAPH_HEIGHT ) + GRAPH_TOP );
-            // draw reference value for day of the week
-            context.fillText( ( i + 1 ), GRAPH_RIGHT / arrayLen * i, GRAPH_BOTTOM + 25);
-        }
-        context.stroke();
-      }
-
-    // test graph
-    var testValues = [ 0, 6, 8, 7, 5, 6, 5 ];
-    drawGraph( testValues );
-
-    </script>
+    <script src='https://unpkg.com/dailychart/dist/dailychart.min.js'></script>
   </head>
   <body>
     <div class="full">
@@ -117,9 +28,6 @@
         </div>
       </div>
       <div class="main">
-        <div class="main-title">
-          <h1>Home</h1>
-        </div>
         <div class="streams">
           <div class="streams-sec-title">
             <h1>Most Active</h1>
@@ -128,29 +36,109 @@
             <div class="stream-cover-h">
               <h1>Album</h1>
             </div>
+            <div class="monthly-streams-h">
+              <h1>Monthly Streams</h1>
+            </div>
             <div class="total-streams-h">
               <h1>Total Streams</h1>
             </div>
             <div class="stream-graph-h">
-              <h1>Performance</h1>
+              <h1>Monthly Performance</h1>
             </div>
             <div class="change-h">
-              <h1>% Change</h1>
+              <h1>Growth</h1>
             </div>
           </div>
-          <a href="#">
+          <a href="#" id="sitem">
           <div class="stream-item">
             <div class="stream-cover">
               <img src="https://f4.bcbits.com/img/a2637900166_5.jpg" alt="">
             </div>
+            <div class="monthly-streams">
+              <input type="text" id="mstreams1" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray1 = [9355602, 9869309, 10447259, 11092474, 11537272, 11767200, 12138572, 12279245, 12940486, 14109028, 15074770, 15570605, 16606559, 16702700, 17760327, 18934975, 21281382, 22762655, 22913777, 24515296, 26302111, 31830983, 32237852, 41066027, 41689613, 47460015, 62560748, 97398556, 104824709, 228048475];
+                var mstreamsVal1 = (Math.round(((dataArray1[dataArray1.length-1]-dataArray1[0])/1000000))).toString() + "M";
+                document.getElementById("mstreams1").value = mstreamsVal1
+              </script>
+            </div>
             <div class="total-streams">
-              <h2>4,178,228</h2>
+              <input type="text" id="streams1" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray1 = [9355602, 9869309, 10447259, 11092474, 11537272, 11767200, 12138572, 12279245, 12940486, 14109028, 15074770, 15570605, 16606559, 16702700, 17760327, 18934975, 21281382, 22762655, 22913777, 24515296, 26302111, 31830983, 32237852, 41066027, 41689613, 47460015, 62560748, 97398556, 104824709, 228048475];
+                var streamsVal1 = dataArray1[dataArray1.length-1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("streams1").value = streamsVal1
+              </script>
             </div>
-            <div class="streams-graph" onmouseover="drawGraph()">
-              <canvas></canvas id="testCanvas" width="550" height="450">
-            </div>
+            <div class="streams-graph">
+
+
+              <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+              <canvas id="myChart1"></canvas>
+                <script>
+
+                var ctx1 = document.getElementById('myChart1').getContext('2d');
+                var dataArray1 = [9355602, 9869309, 10447259, 11092474, 11537272, 11767200, 12138572, 12279245, 12940486, 14109028, 15074770, 15570605, 16606559, 16702700, 17760327, 18934975, 21281382, 22762655, 22913777, 24515296, 26302111, 31830983, 32237852, 41066027, 41689613, 47460015, 62560748, 97398556, 104824709, 228048475];
+                var changeVal1 = dataArray1[dataArray1.length-1] / dataArray1[0];
+                var streamsVal1 = dataArray1[dataArray1.length-1];
+                var myChart1 = new Chart(ctx1, {
+                    type: 'line',
+                    data: {
+                        labels: [30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
+                        datasets: [{
+
+                            label: "",
+                            data: dataArray1,
+                            fill: false,
+                            borderColor: "#394889",
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive : true,
+                        maintainAspectRatio: false,
+                        layout :{
+                          padding: {
+                            top: 10,
+                            bottom: 10
+                          }
+                        },
+
+                        legend: {
+                          display: false
+                        },
+                        elements: {
+                          point: {
+                            radius: 0
+                          }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                display: false
+                            }],
+                            xAxes: [{
+                              display: false
+
+                            }]
+
+                        }
+                    }
+                });
+                </script>
+              </div>
+
+
+
             <div class="change">
-              <h2>+3.2%</h2>
+              <input type="text" class="changeBox" id="change1" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                dataArray1 = [9355602, 9869309, 10447259, 11092474, 11537272, 11767200, 12138572, 12279245, 12940486, 14109028, 15074770, 15570605, 16606559, 16702700, 17760327, 18934975, 21281382, 22762655, 22913777, 24515296, 26302111, 31830983, 32237852, 41066027, 41689613, 47460015, 62560748, 97398556, 104824709, 228048475];
+                var changeVal1 = (dataArray1[dataArray1.length-1] / dataArray1[0]).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
+                document.getElementById("change1").value = changeVal1
+              </script>
             </div>
 
 
@@ -162,12 +150,89 @@
             <div class="stream-cover">
               <img src="https://media.pitchfork.com/photos/5fe1fc4eb35e0eefa6919e92/1:1/w_320/Playboi-Carti.jpg" alt="">
             </div>
-
-            <div class="total-streams">
-              <h2>267,994,317</h2>
+            <div class="monthly-streams">
+              <input type="text" id="mstreams2" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray2 = [262380, 1166483, 1527174, 2160459, 2332598, 2533802, 2579216, 2639201, 2665683, 2871863, 3007339, 3033504, 3161622, 3634907, 3835362, 4038866, 4505250, 4645612, 4853584, 5770093, 6335490, 6598446, 7118658, 7807430, 8096290, 9301914, 15569504, 18581701, 24751930, 57052838];
+                var mstreamsVal2 = (Math.round(((dataArray2[dataArray2.length-1]-dataArray2[0])/1000000))).toString() + "M";
+                document.getElementById("mstreams2").value = mstreamsVal2
+              </script>
             </div>
+            <div class="total-streams">
+              <input type="text" id="streams2" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray2 = [262380, 1166483, 1527174, 2160459, 2332598, 2533802, 2579216, 2639201, 2665683, 2871863, 3007339, 3033504, 3161622, 3634907, 3835362, 4038866, 4505250, 4645612, 4853584, 5770093, 6335490, 6598446, 7118658, 7807430, 8096290, 9301914, 15569504, 18581701, 24751930, 57052838];
+                var streamsVal2 = dataArray2[dataArray2.length-1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("streams2").value = streamsVal2
+              </script>
+            </div>
+            <div class="streams-graph">
+
+
+              <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+              <canvas id="myChart2"></canvas>
+                <script>
+
+                var ctx2 = document.getElementById('myChart2').getContext('2d');
+                var dataArray2 = [262380, 1166483, 1527174, 2160459, 2332598, 2533802, 2579216, 2639201, 2665683, 2871863, 3007339, 3033504, 3161622, 3634907, 3835362, 4038866, 4505250, 4645612, 4853584, 5770093, 6335490, 6598446, 7118658, 7807430, 8096290, 9301914, 15569504, 18581701, 24751930, 57052838];
+                var myChart2 = new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        labels: [30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
+                        datasets: [{
+
+                            label: "",
+                            data: dataArray2,
+                            fill: false,
+                            borderColor: "#394889",
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive : true,
+                        maintainAspectRatio: false,
+                        layout :{
+                          padding: {
+                            top: 10,
+                            bottom: 10
+                          }
+                        },
+
+                        legend: {
+                          display: false
+                        },
+                        elements: {
+                          point: {
+                            radius: 0
+                          }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                display: false
+                            }],
+                            xAxes: [{
+                              display: false
+
+                            }]
+
+                        }
+                    }
+                });
+                </script>
+              </div>
+
+
+
             <div class="change">
-              <h2>+2.5%</h2>
+              <input type="text" class="changeBox" id="change2" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                dataArray2 = [262380, 1166483, 1527174, 2160459, 2332598, 2533802, 2579216, 2639201, 2665683, 2871863, 3007339, 3033504, 3161622, 3634907, 3835362, 4038866, 4505250, 4645612, 4853584, 5770093, 6335490, 6598446, 7118658, 7807430, 8096290, 9301914, 15569504, 18581701, 24751930, 57052838];
+                var changeVal2 = (dataArray2[dataArray2.length-1] / dataArray2[0]).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
+                document.getElementById("change2").value = changeVal2;
+              </script>
             </div>
           </div>
           </a>
@@ -176,17 +241,95 @@
             <div class="stream-cover">
               <img src="https://images.genius.com/07a3deb92bfe7c78f95add89edc0e5ed.1000x1000x1.png" alt="">
             </div>
-
-            <div class="total-streams">
-              <h2>310,451,667</h2>
+            <div class="monthly-streams">
+              <input type="text" id="mstreams3" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray3 = [13402849, 14341855, 14557682, 14790616, 15238163, 15253098, 17000616, 18509612, 19211158, 19610925, 20458054, 21732522, 22006216, 23718254, 23975229, 26086966, 29863181, 31051155, 32202707, 37448845, 38058410, 43721690, 53394926, 61143965, 66797820, 72947011, 87721159, 102805113, 151924205, 200436412];
+                var mstreamsVal3 = (Math.round(((dataArray3[dataArray3.length-1]-dataArray3[0])/1000000))).toString() + "M";
+                document.getElementById("mstreams3").value = mstreamsVal3
+              </script>
             </div>
+            <div class="total-streams">
+              <input type="text" id="streams3" class="changeBox" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                var dataArray3 = [13402849, 14341855, 14557682, 14790616, 15238163, 15253098, 17000616, 18509612, 19211158, 19610925, 20458054, 21732522, 22006216, 23718254, 23975229, 26086966, 29863181, 31051155, 32202707, 37448845, 38058410, 43721690, 53394926, 61143965, 66797820, 72947011, 87721159, 102805113, 151924205, 200436412];
+                var streamsVal3 = dataArray3[dataArray3.length-1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("streams3").value = streamsVal3
+              </script>
+            </div>
+
+            <div class="streams-graph">
+
+
+              <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+              <canvas id="myChart3"></canvas>
+                <script>
+
+                var ctx3 = document.getElementById('myChart3').getContext('2d');
+                var dataArray3 = [13402849, 14341855, 14557682, 14790616, 15238163, 15253098, 17000616, 18509612, 19211158, 19610925, 20458054, 21732522, 22006216, 23718254, 23975229, 26086966, 29863181, 31051155, 32202707, 37448845, 38058410, 43721690, 53394926, 61143965, 66797820, 72947011, 87721159, 102805113, 151924205, 200436412];
+                var myChart3 = new Chart(ctx3, {
+                    type: 'line',
+                    data: {
+                        labels: [30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
+                        datasets: [{
+
+                            label: "",
+                            data: dataArray3,
+                            fill: false,
+                            borderColor: "#394889",
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive : true,
+                        maintainAspectRatio: false,
+                        layout :{
+                          padding: {
+                            top: 10,
+                            bottom: 10
+                          }
+                        },
+
+                        legend: {
+                          display: false
+                        },
+                        elements: {
+                          point: {
+                            radius: 0
+                          }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                display: false
+                            }],
+                            xAxes: [{
+                              display: false
+
+                            }]
+
+                        }
+                    }
+                });
+                </script>
+              </div>
+
+
+
             <div class="change">
-              <h2>+1.7%</h2>
+              <input type="text" class="changeBox" id="change3" style="text-align: center;border: 0;background-color: transparent;color: #394889;font-size: 25px;" readonly></input>
+              <script type="text/javascript">
+                dataArray3 = [13402849, 14341855, 14557682, 14790616, 15238163, 15253098, 17000616, 18509612, 19211158, 19610925, 20458054, 21732522, 22006216, 23718254, 23975229, 26086966, 29863181, 31051155, 32202707, 37448845, 38058410, 43721690, 53394926, 61143965, 66797820, 72947011, 87721159, 102805113, 151924205, 200436412];
+                var changeVal3 = (dataArray3[dataArray3.length-1] / dataArray3[0]).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
+                document.getElementById("change3").value = changeVal3
+              </script>
             </div>
           </div>
           </a>
           <div class="stream-button">
-            <a href="data.htm">View All Streams</a>
+            <a href="data.htm">View All</a>
           </div>
         </div>
         <div class="projections">
@@ -195,19 +338,19 @@
           </div>
           <div class="projections-headers">
             <div class="projection-artist">
-              <h1>Artist Image</h1>
+              <h1>Artist</h1>
             </div>
             <div class="projection-name">
-              <h1>Album Name</h1>
-            </div>
-            <div class="projection-date">
-              <h1>Release Date</h1>
+              <h1>Album</h1>
             </div>
             <div class="projection-streams">
               <h1>Projection</h1>
             </div>
+            <div class="projection-rank">
+              <h1>Ranking</h1>
+            </div>
             <div class="projection-period">
-              <h1>Time Period</h1>
+              <h1>Release Date</h1>
             </div>
           </div>
           <a href="#">
@@ -218,10 +361,10 @@
               <div class="projection-name">
                 <h2>Certified Lover Boy</h2>
               </div>
-              <div class="projection-date">
+              <div class="projection-streams">
                 <h2>Upcoming</h2>
               </div>
-              <div class="projection-streams">
+              <div class="projection-rank">
                 <h2>1,800,000,000</h2>
               </div>
               <div class="projection-period">
@@ -237,10 +380,10 @@
               <div class="projection-name">
                 <h2>Untitled</h2>
               </div>
-              <div class="projection-date">
+              <div class="projection-streams">
                 <h2>Upcoming</h2>
               </div>
-              <div class="projection-streams">
+              <div class="projection-rank">
                 <h2>1,200,000,000</h2>
               </div>
               <div class="projection-period">
@@ -256,10 +399,10 @@
               <div class="projection-name">
                 <h2>Slime Language 2</h2>
               </div>
-              <div class="projection-date">
+              <div class="projection-streams">
                 <h2>Upcoming</h2>
               </div>
-              <div class="projection-streams">
+              <div class="projection-rank">
                 <h2>800,000,000</h2>
               </div>
               <div class="projection-period">

@@ -102,20 +102,21 @@ body {
 }
 
 .menu-button a:hover {
-  opacity: .5;
-  transition-duration: 1s;
-  background-color: gray;
-  color: white;
+
+  transition-duration: .5s;
+  background-color: #f8f8ff;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+
 }
 
 .main {
   box-sizing: border-box;
   height: auto;
-  background-color: #f8f8ff;
+  background-color: white;
   width: 80%;
-  max-width: 1200px;
+  width: 1500px;
   margin: 0;
-  padding: 20px 40px 20px 40px;
+  padding: 25px 50px 25px 50px;
   border: 0;
   outline: 0;
   box-shadow: 0 0 11px rgba(33,33,33,.2);
@@ -124,32 +125,14 @@ body {
 
 }
 
-.main-title {
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-  padding: 1px 30px 1px 30px;
-  margin-bottom: 50px;
-  margin-top: 30px;
-  box-sizing: border-box;
-]
-}
-
-.main-title h1 {
-  font-family: 'Ubuntu', sans-serif;
-  color: #394889;
-  font-size: 40px;
-  box-sizing: border-box;
-
-}
-
 .streams {
   background-color: white;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 0px 30px 30px 30px;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-  max-width: 1120px;
+  max-width: 1000px;
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px
+  margin: 20px 40px 20px 40px;
 }
 
 
@@ -162,7 +145,6 @@ body {
 .streams-sec-title {
   width: 100%;
   box-sizing: border-box;
-  padding-top: 10px;
 }
 
 .streams-sec-title h1 {
@@ -178,64 +160,57 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: #394889;
   font-size: 10px;
-  width: 1060px;
-  background-color: #f8f8ff;
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 1400px;
+
+
   box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-
 }
 
 .stream-item {
   margin-top: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   color: #394889;
-  width: 1060px;
-  transition-duration: 1s;
+  width: 1400px;
+  transition-duration: .5s;
   border-radius: 20px;
-  background-color: #f8f8ff;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+
 
 }
 
+
 .stream-item:hover {
   transition-duration: .5s;
-  background-color: #394889;
-  color: #f8f8ff;
-  margin-left: 30px;
+  background-color: #f8f8ff;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+
+
 }
 
 
 
 .stream-cover {
 
-  width: 150px;
-  padding: 25px 25px 25px 25px;
+  width: 100px;
+
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  margin-right: 20px;
-
-  height: 150px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
   border-radius: 20px;
 
 
 }
 
 .stream-cover-h {
-  width: 150px;
+  width: 100px;
   box-sizing: border-box;
 
-  margin-right: 10px;
-  text-align: left;
+  text-align: center;
 
 
 
@@ -250,80 +225,102 @@ body {
 
 }
 
+.monthly-streams {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+
+}
+
+.monthly-streams-h {
+  width: 200px;
+  margin-left: 100px;
+  text-align: center;
+
+}
+
+
+
 .total-streams {
 
   width: 200px;
-  height: 100px;
   box-sizing: border-box;
-  text-align: left;
-
-  margin-left: 20px;
-
+  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+  margin-left: 100px;
+
+
 
 }
 
 .total-streams-h {
-  width: 435px;
-
-  box-sizing: border-box;
-  text-align: left;
-
-  margin-right: 10px;
+  width: 200px;
 
 
-
+  text-align: center;
+  margin-left: 100px;
 
 }
 
 .total-streams h2 {
   font-size: auto;
+
 }
 
 .streams-graph {
 
-  width: 550px;
-  height: 450px;
+  width: 300px;
+  height: 100px;
   box-sizing: border-box;
-  text-align: left;
-
-  margin-left: 20px;
+  text-align: center;
 
   display: flex;
   align-items: center;
-  justify-content: left;
-  background-color: white;
-
+  justify-content: center;
+  margin-left: 100px;
 }
 
+
+
+.stream-graph-h {
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 100px;
+
+}
 
 
 .change {
   width: 200px;
   height: 100px;
   box-sizing: border-box;
-  text-align: left;
-  margin-left: 10px;
-
+  text-align: center;
+  margin-left: 100px;
+  font-size: 17.5px;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .change-h {
-  width: 435px;
+  width: 200px;
   box-sizing: border-box;
-  text-align: left;
-  margin-left: 30px;
+  text-align: center;
+  margin-left: 100px;
+
 
 
 
 }
 
-.change h2 {
-  font-size: auto;
+input {
+  font-family: "Ubuntu", sans-serif;
+
 }
 
 .stream-button {
@@ -331,36 +328,34 @@ body {
   box-sizing: border-box;
   margin-top: 50px;
   margin-bottom: 20px;
-  width: 1060px;
+  width: 1400px;
 
 }
 
 .stream-button a {
   padding: 20px 30px 20px 30px;
   box-sizing: border-box;
-  background-color: #f8f8ff;
+
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
   color: #394889;
   border-radius: 20px;
-  transition-duration: 1s;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  transition-duration: .5s;
+
 
 }
 
 .stream-button a:hover {
   transition-duration: .5s;
-  padding-right: 908px;
-  background-color:#394889;
-  color: #f8f8ff;
+  background-color: #f8f8ff;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
 .projections {
   background-color: white;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+
   margin-top: 50px;
   margin-bottom: 30px;
 
@@ -395,89 +390,98 @@ body {
 
 .projection-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 20px;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-  width: 100%;
-  transition-duration: 1s;
+  width: 1400px;
+  transition-duration: .5s;
   border-radius: 20px;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  color: #394889;
+
 }
 
 .projection-item:hover {
-  opacity: .5;
-  transition-duration: 1s;
-  background-color: gray;
-  color: white;
+
+  transition-duration: .5s;
+  background-color:  #f8f8ff;
+
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
 .projection-artist {
-  width: 20%;
+  width: 100px;
   box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  padding-right: 10px;
+  text-align: center;
 
 }
 
 .projection-artist img {
-  max-width: 100%;
-  padding: 20px 20px 20px 20px;
+  width: 100px;
+
   box-sizing: border-box;
   border-radius: 25%;
-  margin-left: auto;
-  margin-right: auto;
 
 }
 
 .projection-artist h1 {
-  padding-left: 20px;
-  box-sizing: border-box;
+
 }
 
 .projection-name {
-  width: 20%;
-  box-sizing: border-box;
-  text-align: left;
-  padding-right: 10px;
-  padding-left: 10px;
+  width: 200px;
+  margin-left: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .projection-name h2 {
   font-size: 25px;
 }
 .projection-date {
-  width: 20%;
-  box-sizing: border-box;
-  text-align: left;
-  padding-right: 10px;
-  padding-left: 10px;
-}
+  width: 200px;
 
-.projection-date h2 {
-  font-size: 25px;
+  text-align: center;
+
 }
 
 .projection-streams {
-  width: 20%;
-  box-sizing: border-box;
-  text-align: left;
-  padding-right: 10px;
-  padding-left: 10px;
+  width: 200px;
+  margin-left: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .projection-streams h2 {
   font-size: 20px;
 }
 
-.projection-period {
-  width: 20%;
-  box-sizing: border-box;
-  text-align: left;
+.projection-rank {
+  width: 300px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projection-date h2 {
+  font-size: 25px;
+}
 
-  padding-left: 10px;
+
+
+.projection-period {
+  width: 200px;
+  margin-left: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .projection-period h2 {
@@ -496,19 +500,19 @@ body {
 
   padding: 20px;
   box-sizing: border-box;
-  background-color: #f8f8ff;
+
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
   color: #394889;
   border-radius: 10px;
-  transition-duration: 1s;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  transition-duration: .5s;
+
 
 }
 
 .projections-button a:hover {
-  opacity: .5;
-  transition-duration: 1s;
-  background-color: gray;
-  color: white;
+  background-color: #f8f8ff;
+  transition-duration: .5s;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+
 }
