@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MIS3690 Survey</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<script type="text/javascript">
+	function check() {
+		var fn = document.form1.fname.value;
+		var ln = document.form1.lname.value;
+
+		if (fn === "") {
+			alert("Please input first name");
+			document.getElementById('fname').focus();
+			return false;
+		}
+		else if (ln === "") {
+			alert("Please input last name");
+			document.getElementById('lname').focus();
+			return false;
+		}
+		else if (document.form1.images.checked === false && document.form1.css.checked === false && document.form1.tables.checked === false && document.form1.forms.checked === false) {
+			alert("Please choose fun topic");
+			return false;
+		}
+		else {
+			alert("Submitted!");
+			return true;
+		}
+
+	}
+</script>
+<body>
+	<h1>MIS3690 Student Survey</h1>
+	<p>Please complete the following survey.  You must answer each question.  When you are done,
+	    please click on the Submit button.</p>
+  <form class="" action="http://wtspring13sec2.babson.edu/gordon/mailer.php" method="post" name="form1">
+    <p>First Name: <input type="text" name="fname" id="fname"> Last Name: <input type="text" name="lname" id="lname"></p>
+    <p>Gender: <input type="radio" name="gender" value="male"><label for="male">Male</label><input type="radio" name="gender" value="female"><label for="female">Female</label> </p>
+    <p>What grade do you expect to recieve? <select name="grade"><option value="a">A</option><option value="b">B</option><option value="c">C</option></select></p>
+    <p>What topics did you find to be fun?
+      <input type="checkbox" name="images"><label for="images">Images</label>
+      <input type="checkbox" name="css"><label for="css">CSS</label>
+      <input type="checkbox" name="tables"><label for="tables">Tables</label>
+      <input type="checkbox" name="forms"><label for="forms">Forms</label>
+    </p>
+    <p>Please add any comments you have<textarea name="name" rows="4" cols="80" style="width: 500px;"></textarea> </p>
+    <input type="submit" name="submit" onclick="return check()" value="Submit"><input type="reset" name="reset" value="Reset" style="margin-left: 25px;">
+  </form>
+</body>
+</html>
