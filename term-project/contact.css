@@ -174,22 +174,11 @@ input[type=submit]:hover {
 .container {
   border-radius: 5px;
   width: 700px;
-
-  box-sizing: border-box;
+  padding: 20px;
   font-family: "Ubuntu", sans-serif;
-  color: #394889;
+
 
 }
-
-.container p {
-  font-size: 20px;
-}
-
-.main h1 {
-  font-size: 30px;
-  font-family: "Ubuntu", sans-serif;
-}
-
 
 input:focus, textarea:focus, select:focus{
   outline: none;
@@ -239,12 +228,6 @@ input:focus, textarea:focus, select:focus{
 
 }
 
-figcaption {
-  text-decoration: none;
-  color: black;
-}
-
-
 .icons img {
   margin: 0px 50px;
   box-sizing: border-box;
@@ -255,7 +238,6 @@ figcaption {
 .icons img:hover {
   transform: scale(1.5) rotate(0deg);
   transition-duration: 1s;
-
 }
 
 ::placeholder {

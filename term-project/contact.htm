@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="contact.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script type="text/javascript">
+      function underline_name() {
+        document.getElementById('name').style.borderColor = "#394889";
+        document.getElementById('name').style.transitionDuration = ".5s";
+        document.getElementById('email').style.borderColor = "#f8f8ff";
+        document.getElementById('email').style.transitionDuration = ".5s";
+        document.getElementById('message').style.borderColor = "#f8f8ff";
+        document.getElementById('message').style.transitionDuration = ".5s";
+      }
+      function underline_email() {
+        document.getElementById('email').style.borderColor = "#394889";
+        document.getElementById('email').style.transitionDuration = ".5s";
+        document.getElementById('name').style.borderColor = "#f8f8ff";
+        document.getElementById('name').style.transitionDuration = ".5s";
+        document.getElementById('message').style.borderColor = "#f8f8ff";
+        document.getElementById('message').style.transitionDuration = ".5s";
+      }
+      function underline_message() {
+        document.getElementById('message').style.borderColor = "#394889";
+        document.getElementById('message').style.transitionDuration = ".5s";
+        document.getElementById('name').style.borderColor = "#f8f8ff";
+        document.getElementById('name').style.transitionDuration = ".5s";
+        document.getElementById('email').style.borderColor = "#f8f8ff";
+        document.getElementById('email').style.transitionDuration = ".5s";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="full">
+      <div class="menu">
+        <img src="thumbnail_IMG_0071.jpg">
+        <div class="menu-button" >
+          <a href="index.htm"><img src="circle.svg"><span>Home</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="data.htm"><img src="disc.svg"><span>Data</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="projections.htm"><img src="target.svg"><span>Projections</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="about.htm"><img src="info.svg"><span>About</span></a>
+        </div>
+        <div class="menu-button">
+          <a href="contact.htm"><img src="smile.svg"><span>Contact</span></a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="social">
+          <div class="container">
+             <h1>Contact</h1>
+             <form action="action_page.php">
+              <input type="text" id="name" onclick="underline_name()" name="name" placeholder="Name">
+              <input type="text" id="email" onclick="underline_email()" name="email" placeholder="Email">
+              <textarea id="message" name="message" onclick="underline_message()" placeholder="Message" style="height:150px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="icons">
+            <a href="https://www.instagram.com/musicplaceapp/"><img src="instagram.svg" alt="instagram"></a>
+            <a href="https://twitter.com/musicplaceapp"><img src="twitter.svg" alt="twitter"></a>
+            <a href="http://musicplaceexchange.com/"><img src="globe.svg" alt="website"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

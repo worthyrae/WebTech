@@ -15,6 +15,7 @@ body {
 .menu {
   height: 100%;
   background-color: white;
+  width: 20%;
   width: 250px;
   box-sizing: border-box;
   padding: 0 20px 0 20px;
@@ -22,20 +23,21 @@ body {
 }
 
 .menu img {
-  width: 210px;
+  width: 100%;
+  max-width: 210px;
   box-sizing: border-box;
   margin-top: 20px;
-
 
 }
 
 .menu-button {
   padding: 0px 10px 0px 10px;
   box-sizing: border-box;
+  width: 100%;
   width: 210px;
-  display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+
 
 }
 
@@ -53,20 +55,18 @@ body {
   border-radius: 10px;
   align-items: center;
   justify-content: left;
+
 }
 
-
 .menu-button img {
-  width: 20px;
-  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  box-sizing: border-box;
+  display:table-cell;
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-
-  box-sizing: border-box;
-
-  display:table-cell;
 }
 
 .menu-button span{
@@ -80,7 +80,6 @@ body {
   transition-duration: .5s;
   background-color: #f8f8ff;
   box-shadow: 0 0 11px rgba(33,33,33,.2);
-
 }
 
 .main {
@@ -88,25 +87,69 @@ body {
   height: auto;
   background-color: white;
   width: 1500px;
+  height: 100%;
   padding: 25px 50px 25px 50px;
+
   box-shadow: 0 0 11px rgba(33,33,33,.2);
 
+}
+
+#search {
+  border-bottom: 2px solid #f8f8ff;
+  transition-duration: .5s;
+}
+
+
+.sbar {
+  width: 1000px;
+  height: 100%;
 
 }
 
-.streams {
-  background-color: white;
-  border-radius: 20px;
+.sbar-sec-title h1{
+  font-size: 30px;
+  color: #394889;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.sbox input{
+  width: 400px;
+  height: 50px;
+  padding: 2px 10px;
+  margin-left: 15px;
   box-sizing: border-box;
-  max-width: 1000px;
-  border-bottom-left-radius:25px;
-  border-bottom-right-radius:25px;
+  border: 0;
+  font-size: 20px;
+  color: #394889;
+}
 
+.sbox {
+  display: flex;
+  align-items: center;
+}
+
+.gainers {
+  background-color: white;
+  box-sizing: border-box;
+  width: 1000px;
+  transition-duration: .5s;
+}
+
+.losers {
+  background-color: white;
+  box-sizing: border-box;
+  width: 1000px;
+  transition-duration: .5s;
 }
 
 
 
-.streams a{
+.gainers a{
+  text-decoration: none;
+  color: black;
+}
+
+.losers a{
   text-decoration: none;
   color: black;
 }
@@ -320,171 +363,13 @@ input {
   box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
-.projections {
-  background-color: white;
-  border-radius: 20px;
-  box-sizing: border-box;
-
-  margin-top: 50px;
-  margin-bottom: 30px;
-
+input:focus, textarea:focus, select:focus{
+  outline: none;
 }
 
-.projections a{
-  text-decoration: none;
-  color: black;
-}
-
-.projections-sec-title {
-  width: 100%;
-  box-sizing: border-box;
-  padding-top: 10px
-}
-
-.projections-sec-title h1 {
-  font-family: 'Ubuntu', sans-serif;
+::placeholder {
   color: #394889;
-  font-size: 30px;
-}
-
-.projections-headers {
-  display: flex;
-  font-family: 'Ubuntu', sans-serif;
-  color: #394889;
-  font-size: 10px;
-  width: 100%;
-  align-items: center;
-  justify-content: left;
-}
-
-.projection-item {
-  display: flex;
-  margin-top: 20px;
-  box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
-  width: 1400px;
-  transition-duration: .5s;
-  border-radius: 20px;
-  color: #394889;
-
-}
-
-.projection-item:hover {
-
-  transition-duration: .5s;
-  background-color:  #f8f8ff;
-
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-}
-
-.projection-artist {
-  width: 100px;
-  box-sizing: border-box;
-  text-align: center;
-
-}
-
-.projection-artist img {
-  width: 100px;
-
-  box-sizing: border-box;
-  border-radius: 25%;
-
-}
-
-.projection-artist h1 {
-
-}
-
-.projection-name {
-  width: 200px;
-  margin-left: 100px;
-  text-align: center;
-
-
-
-}
-
-.projection-name input {
-
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.projection-date {
-  width: 200px;
-
-  text-align: center;
-
-}
-
-.projection-streams {
-  width: 200px;
-  margin-left: 100px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.projection-streams h2 {
-  font-size: 20px;
-}
-
-.projection-rank {
-  width: 300px;
-  margin-left: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.projection-date h2 {
-  font-size: 25px;
-}
-
-
-
-.projection-period {
-  width: 200px;
-  margin-left: 100px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.projection-period h2 {
-  font-size: 20px;
-}
-
-.projections-button {
-  text-align: right;
-  box-sizing: border-box;
-  margin-top: 40px;
-  margin-bottom: 20px;
-
-}
-
-.projections-button a {
-
-  padding: 20px;
-  box-sizing: border-box;
-
-  text-decoration: none;
-  font-family: 'Ubuntu', sans-serif;
-  color: #394889;
-  border-radius: 10px;
-  transition-duration: .5s;
-
-
-}
-
-.projections-button a:hover {
-  background-color: #f8f8ff;
-  transition-duration: .5s;
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-
+  font-family: "Ubuntu", sans-serif;
+  opacity: .75;
+  font-size: 15px;
 }
