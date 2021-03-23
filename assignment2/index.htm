@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Fall 2020 Assignment 2</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<style>
+		p, select, input, button {font-size:16pt}
+		h1 {text-align:center}
+		body {width:900px;}
+
+	</style>
+
+	<script>
+		function changeLastinputName() {
+			const subjectNames = ["JavaScript", "Hot Spots", "Animation"];
+			var randomNumber = Math.floor(Math.random() * 3);
+			var randomName = subjectNames[randomNumber];
+			document.getElementById('finalFunTopic').innerHTML = randomName;
+			document.getElementById('hiddenTopicValue').value = randomName;
+		}
+
+		function checkInputs() {
+			var grade_input = document.getElementById('grade_input').value;
+			if (grade_input == "S") {
+				alert("Please enter grade");
+				return false;
+			}
+			var gpa_input = document.getElementById('gpa_input').value;
+			if (gpa_input == "") {
+				alert("Please enter GPA");
+				return false;
+			}
+			var gpa_value = document.getElementById('gpa_input').value;
+			if (gpa_value > 4) {
+				alert("Please enter value below 4");
+				return false;
+			}
+		}
+
+		function changeOpacity() {
+			var opacity_value = 1;
+			while (opacity_value > .4) {
+				opacity_value -= .04;
+				document.getElementById('gpa').style.transitionDuration = "3s";
+				document.getElementById('gpa').style.opacity = opacity_value;
+			}
+
+
+		}
+
+		function difficultMood() {
+			document.getElementById('moodImage').src = "frown.jpg"
+			document.getElementById('moodHeader').innerHTML = "Which topics were difficult?"
+		}
+
+		function funMood() {
+			document.getElementById('moodImage').src = "smile.jpg"
+			document.getElementById('moodHeader').innerHTML = "Which topics were fun?"
+		}
+
+		function hoverOverClassName() {
+			document.getElementById('honorCode').style.backgroundColor = "ivory";
+			document.getElementById('please').style.fontSize = "32px";
+			document.getElementById('pledge').style.fontStyle = "italic";
+		}
+	</script>
+</head>
+<body onload="changeLastinputName()">
+	<h1><span onmouseover="hoverOverClassName()">MIS3690</span> Student Survey</h1>
+	<p><span id="please">Please</span> complete the following survey.  When you are done,
+	    click the Submit button.
+	</p>
+	<form method="post" onsubmit="return checkInputs()" action="http://wtspring13sec2.babson.edu/gordon/mailer.php">
+	   <p>What do you want the next question to be about? &nbsp;&nbsp;&nbsp;
+			 Fun<input type="radio" name="q" value="F" checked="checked" onclick="funMood()"/>&nbsp;&nbsp;
+			 Difficulty<input type="radio" name="q" value="D" onclick="difficultMood()"/>
+		<img id="moodImage" src="smile.jpg" alt="mood" style="width:30px; margin-left:40px" />
+	   </p>
+	   <p><span id="moodHeader">Which topics were fun?</span>&nbsp;&nbsp;&nbsp;
+		CSS <input type="checkbox" name="fun2" value="c" />&nbsp;&nbsp;&nbsp;&nbsp;
+		Forms <input type="checkbox" name="fun4" value="fo" />&nbsp;&nbsp;&nbsp;&nbsp;
+    Images <input type="checkbox" name="fun1" value="i" />&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="finalFunTopic"></span> <input type="checkbox" name="fun3" value="t" />
+		<input type="hidden" id="hiddenTopicValue" name="randomTopicName" value=""/>
+			</p>
+	   <p>What grade do you expect to receive?
+		<select name="grade" id="grade_input">
+			<option value="S">Select Grade</option>
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+			<option value="D">D</option>
+			<option value="F">F</option>
+		</select>
+	</p>
+	<p>Enter your <span id="gpa">GPA</span>: <input type="text" id="gpa_input" name="gpa" size="4" onfocus="changeOpacity()"/></p>
+	<p style="margin-left:300px">
+		<input type="submit" name="submit" value="Submit"/>&nbsp;&nbsp;
+		<input type="reset" name="reset" value="Reset" />
+	</p>
+
+	</form>
+	<p id="honorCode">I, Worthy Rae, have abided by the Babson Code of Ethics in this work and <span id="pledge">pledge</span> to be better than that which would compromise my integrity.</p>
+</body>
+</html>
