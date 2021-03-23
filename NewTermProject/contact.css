@@ -1,0 +1,315 @@
+.title-bar {
+  margin: 20px 0px 10px 0px;
+  display: flex;
+  max-width: 2000px;
+  align-items:center;
+}
+
+.title {
+  width: 70%;
+  margin: 0px 0px 0px 10px;
+
+
+}
+
+.title h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 80px;
+  position: relative;
+  top: 0;
+  font-family: 'titlefont';
+}
+
+.socials {
+  margin: 0px 10px 0px 0px;
+  padding: 0;
+  display: flex;
+  text-align: right;
+  width: 30%;
+  align-items:center;
+
+}
+
+.instagram {
+  flex: 1;
+  margin: 0px 10px 0px 10px;
+
+}
+
+.instagram img {
+  height: 60px;
+
+}
+
+.facebook {
+  max-width: 100px;
+  margin: 0px 0px 0px 10px;
+
+}
+
+.facebook img {
+  height: 60px;
+}
+
+.main {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px 0px 0px 0px;
+
+}
+
+.profile {
+  flex: 1;
+  text-align: left;
+  margin: 0px 10px 0px 10px;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+
+}
+
+.profile img {
+  max-width: 400px;
+  border-radius: 50%;
+
+
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  margin: 0px 0px 10px 0px;
+  align-items:center;
+}
+
+.info {
+  margin: 0px 10px 0px 10px;
+  flex: 1;
+  text-align: left;
+  box-sizing: border-box;
+
+}
+
+.info-title {
+  font-family: 'titlefont';
+  font-size: 40px;
+}
+
+.contact {
+  flex: 1;
+  margin: 0px 10px 0px 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  font-family: 'titlefont';
+  width: 100%;
+  font-size: 40px;
+}
+
+.contact-form {
+  max-width: 100%;
+  margin: 20px 0px 0px 0px;
+  box-sizing: border-box;
+
+}
+
+
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 15px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+  font-family: 'bodyfont';
+  color: black;
+   /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 1;
+  transition: .5s ease;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+  font-family: 'bodyfont';
+  float: right;
+
+
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: black;
+  color: white;
+}
+
+.info-main {
+  max-width: 100%;
+  margin: 10px 0px 0px 0px;
+  box-sizing: border-box;
+
+}
+
+.info-time {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 10px 10px 0px;
+  border-radius: 10px;
+  color: black;
+  border-color: black;
+  display: flex;
+  align-items:center;
+  font-size: 15px;
+  font-family: 'bodyfont';
+
+}
+
+.time-icon {
+  width: 50px;
+}
+
+.time-icon img{
+  height: 50px;
+}
+
+.time-text {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0px 0px 0px 20px;
+
+}
+
+.info-location {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 0px;
+  border-radius: 10px;
+  color: black;
+  border-color: black;
+  display: flex;
+  align-items:center;
+  font-size: 15px;
+  font-family: 'bodyfont';
+
+}
+
+.location-icon {
+  width: 50px;
+}
+
+.location-icon img{
+  height: 50px;
+}
+
+.location-text {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0px 0px 0px 20px;
+
+}
+
+
+
+.info-education {
+  margin: 10px 0px 0px 0px;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 0px;
+  border-radius: 10px;
+  color: black;
+  border-color: black;
+  display: flex;
+  align-items:center;
+  font-size: 15px;
+  font-family: 'bodyfont';
+
+}
+
+.education-icon {
+  width: 50px;
+}
+
+.education-icon img {
+  height: 50px;
+}
+
+.education-text {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0px 0px 0px 20px;
+
+}
+
+.info-art {
+  margin: 10px 0px 20px 0px;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 0px;
+  border-radius: 10px;
+  color: black;
+  border-color: black;
+  display: flex;
+  align-items:center;
+  font-size: 15px;
+  font-family: 'bodyfont';
+
+}
+
+.art-icon {
+  width: 50px;
+}
+
+.art-icon img {
+  height: 50px;
+}
+
+.art-text {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0px 0px 0px 20px;
+
+}
+
+
+
+@font-face {
+  font-family: 'titlefont';
+  src: url('LifeFormBB.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'bodyfont';
+  src: url('Montserrat-Regular.ttf') format('truetype');
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .info {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .contact {
+    flex: 100%;
+    max-width: 100%;
+  }
+  
+}
