@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      button {position: absolute;top: 0; left: 0;}
+    </style>
+    <script>
+      function changeButton() {
+        const buttonNames = ["Click Me", "Move Me", "Click Here", "Button", "Next"];
+        var randomNameNumber = Math.floor(Math.random() * 5);
+        var randomName = buttonNames[randomNameNumber];
+        document.getElementById('button').innerHTML = randomName;
+        var randomTop = Math.round(Math.random() * 500);
+        var randomLeft = Math.round(Math.random() * 500);
+        document.getElementById('button').style.top = randomTop + "px";
+        document.getElementById('button').style.left = randomLeft + "px";
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="changeButton()" id="button" name="button">Click Me</button>
+  </body>
+</html>
