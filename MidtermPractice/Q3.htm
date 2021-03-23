@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Question 3</title>
+
+	<style>
+	   #p1 {margin-right:0px;}
+	</style>
+	<script>
+    var marginCounter;
+    function checkInput() {
+      var marginLimit = document.getElementById('marginLimit').value;
+      if (marginLimit == "") {
+        alert("Margin limit must be entered");
+      } else if (marginLimit > 500) {
+        alert("Margin limit must be less than or equal to 500");
+      } else {
+          var marginCounter = 0;
+          while (marginLimit - 5 >= marginCounter) {
+            marginCounter += 5;
+            var marginVar = setInterval(changeMargin, 200);
+          }
+      }
+      function changeMargin() {
+        var marginString = marginCounter + "px";
+        document.getElementById('body').style.marginRight = marginString;
+      }
+    }
+
+
+
+
+  </script>
+  </head>
+
+  <body id="body">
+      <p id="p1">At Babson, we believe that entrepreneurship can be a powerful force within organizations of all types and sizes, in established businesses as well as new ventures. In any industry, in any position, it takes Entrepreneurial Thought & Action® to solve problems and make an impact. We were the first to understand that thinking and acting entrepreneurially is more than just an inclination. It can be taught. And we do it better than anyone. Today in our collaborative community, students gain the fundamental business skills and liberal arts knowledge necessary to cultivate an entrepreneurial mindset. They then use that mindset to navigate real business situations, putting what they learn into practice and becoming leaders equipped to make a difference on campus and around the world.</p>
+      <p>Margin Limit: <input type="text" name="m" id="marginLimit"/></p>
+	<p><button onclick="checkInput()">Animate</button></p>
+  </body>
+</html>
