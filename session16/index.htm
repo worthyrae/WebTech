@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Age Calculator</title>
+    <script type="text/javascript">
+      function getAge() {
+        var byear = document.getElementById('year').value;
+        var bmonth = document.getElementById('month').value;
+        var bday = document.getElementById('day').value;
+        var bdate = new Date(byear, bmonth, bday);
+        var cdate = new Date();
+        var ageDiff = (cdate.getTime() - bdate.getTime()) / 1000;
+        ageDiff /= (60*60*24);
+        var age = Math.abs(Math.round(ageDiff/365.25));
+        document.getElementById('ageOutput').innerHTML = age;
+      }
+      function checkCookie() {
+        var lastVisit = getCookie("lastVisit");
+        if (lastVisit != "") {
+          document.getElementById('visitHeader').innerHTML = "First Visit";
+        } else {
+          document.getElementById('visitHeader').innerHTML = lastVisit;
+          lastVisit = new Date();
+          if (lastVisit != "" && lastVisit != null) {
+            setCookie("lastVisit", lastVisit, 365);
+          }
+        }
+      }
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+    </script>
+  </head>
+  <body onload="checkCookie()">
+    <h1>Age Calculator</h1>
+    <h3 id="visitHeader"></h3>
+    <input type="text" id="year" name="year" value="" placeholder="Year">
+    <input type="text" id="month" name="month" value="" placeholder="Month">
+    <input type="text" id="day" name="day" value="" placeholder="Day">
+    <button type="button" onclick="getAge()" name="button">Calculate</button>
+    <br>
+    <h2>Age: <span id="ageOutput"></span></h2>
+  </body>
+</html>
