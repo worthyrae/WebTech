@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="en">
 
   <head>
@@ -10,39 +8,19 @@
 	/* Your styles go here */
 	</style>
 
-	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
-	$(document).ready(funtion(){
-    $("#row1").click(function(){
-      $(this).hide();
+  	$(document).ready(funtion(){
+      $("button").click(function(){
+        $(this).hide();
+      });
     });
-    $("#row2").click(function(){
-      $(this).hide();
-    });
-    $("#row3").click(function(){
-      $(this).hide();
-    });
-    $("#row4").click(function(){
-      $(this).hide();
-    });
-    $("#hide").click(function(){
-      $("#row1").hide();
-      $("#row3").hide();
-    });
-    $("#show").click(function(){
-      $("#row1").show();
-      $("#row3").show();
-    });
-  });
+
 	</script>
   </head>
 
   <body>
 	   <p id="row1">row1</p>
-     <p id="row2">row2</p>
-     <p id="row3">row3</p>
-     <p id="row4">row4</p>
      <button type="button" id="hide" name="button">Hide Odd</button>
-     <button type="button" id="show" name="button">Show All</button>
   </body>
 </html>
