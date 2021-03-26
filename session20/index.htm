@@ -12,16 +12,32 @@
 
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script>
-	$('p').dblclick(function(){
-      $(this).hide()
-	   // jQuery methods go here...
-   });
-	/* Your additional JavaScript goes here */
+	$(document).ready(funtion(){
+    $("#row1").click(function(){
+      $(this).hide();
+    });
+    $("#row2").click(function(){
+      $(this).hide();
+    });
+    $("#row3").click(function(){
+      $(this).hide();
+    });
+    $("#row4").click(function(){
+      $(this).hide();
+    });
+    $("#hide").click(function(){
+      $("#row1").hide();
+      $("#row3").hide();
+    });
+    $("#show").click(function(){
+      $("#row1").show();
+      $("#row3").show();
+    });
+  });
 	</script>
   </head>
 
   <body>
-    <p>fuck jquery</p>
 	   <table>
        <tr id="row1">
          <td>Row 1</td>
@@ -36,7 +52,7 @@
          <td>Row 4</td>
        </tr>
      </table>
-     <button type="button" name="button">Hide Odd</button>
-     <button type="button" name="button">Show All</button>
+     <button type="button" id="hide" name="button">Hide Odd</button>
+     <button type="button" id="show" name="button">Show All</button>
   </body>
 </html>
