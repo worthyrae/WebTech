@@ -10,13 +10,51 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
-  	$("#hide").hide();
-
+  $(document).ready(function(){
+    $("#row1").click(function(){
+      $(this).fadeOut(3000);
+    });
+    $("#row2").click(function(){
+      $(this).fadeOut(3000);
+    });
+    $("#row3").click(function(){
+      $(this).fadeOut(3000);
+    });
+    $("#row4").click(function(){
+      $(this).fadeOut(3000);
+    });
+    $("#hide").click(function(){
+      $("#row1").hide();
+      $("#row3").hide();
+    });
+    $("#show").click(function(){
+      $("#row1").show();
+      $("#row2").show();
+      $("#row3").show();
+      $("#row4").show();
+      $("#row1").css("background-color", "yellow");
+      $("#row3").css("background-color", "yellow");
+    });
+  });
 	</script>
   </head>
 
   <body>
-	   <p id='row1'>row1</p>
+	   <table>
+       <tr id="row1">
+         <td>Row 1</td>
+       </tr>
+       <tr  id="row2">
+         <td>Row 2</td>
+       </tr>
+       <tr  id="row3">
+         <td> Row 3</td>
+       </tr>
+       <tr  id="row4">
+         <td>Row 4</td>
+       </tr>
+     </table>
      <button type='button' id='hide' name='button'>Hide Odd</button>
+     <button type='button' id='show' name='button'>Show All</button>
   </body>
 </html>
