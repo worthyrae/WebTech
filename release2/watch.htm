@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Watch</title>
+    <link rel="stylesheet" href="watch.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="content" id="content">
+        <div class="header">
+          <div class="header-title" id="headerTitle">
+            <h1>El Gordo</h1>
+          </div>
+          <div class="header-menu-icon" id="menuIcon">
+            <img src="menu.svg" alt="" onclick="showMenu()">
+          </div>
+        </div>
+        <div class="video-section">
+          <div class="video-title">
+            <h1>Watch</h1>
+          </div>
+          <div class="video">
+            <video autoplay muted loop>
+              <source src="elGordo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video">
+            <video autoplay muted loop>
+              <source src="elGordo1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <audio src="mM.mp3" autoplay loop>
+        </audio>
+      </div>
+      <div class="menu" id="menu">
+        <div class="menu-top" onclick="showSubmenu()">
+          <h1>Art</h1>
+        </div>
+        <div id="subCanvas" class="menu-subitem">
+          <a href="canvas.htm">
+            <h1>Canvas</h1>
+          </a>
+        </div>
+        <div id="subPaper" class="menu-subitem">
+          <a href="paper.htm">
+            <h1>Paper</h1>
+          </a>
+        </div>
+        <div id="subAll" class="menu-subitem">
+          <a href="index.htm">
+            <h1>All</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.htm">
+            <h1>About</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="contact.htm">
+            <h1>Contact</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="watch.htm">
+            <h1>Watch</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="credit.htm">
+            <h1>Credit</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showMenu() {
+        document.getElementById('menu').style.width = 20 + "%";
+        document.getElementById('menu').style.display = "block";
+        document.getElementById('content').style.width = 80 + "%";
+        document.getElementById('menuIcon').style.display = "none";
+      }
+      function showSubmenu() {
+        document.getElementById('subCanvas').style.display = "block";
+        document.getElementById('subPaper').style.display = "block";
+        document.getElementById('subAll').style.display = "block";
+      }
+    </script>
+  </body>
+</html>

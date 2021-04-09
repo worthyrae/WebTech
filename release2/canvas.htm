@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art</title>
+    <link rel="stylesheet" href="canvas.css">
+  </head>
+  <body>
+    <!--
+    Comments Section:
+      Table - Line 32 credit.htm
+      List - Line 53 credit.htm
+      Form - Line 38 contact.htm
+      Image Map - Line 64 credit.htm
+      Video - Line 29 watch.htm
+      Audio - Line 34 watch.htm
+      Javascript Style - Line 164 index.htm
+      Javascript Text - Line 174 index.htm
+      Javascript Validate - Line 119 contact.htm
+      Javascript Image - Line 200 index.htm
+      Javascript Animation -
+      Javascript Random - Line 125 credit.htm
+      Jquery 1
+      Jquery 2
+      Jquery 3
+      Jquery 4
+    -->
+    <div class="main">
+      <div class="content" id="content">
+        <div class="header">
+          <div class="header-title" id="headerTitle">
+            <h1>El Gordo</h1>
+          </div>
+          <div class="header-menu-icon" id="menuIcon">
+              <img src="menu.svg" alt="" onclick="showMenu()">
+          </div>
+        </div>
+        <div class="image-gallery">
+          <div id="columnLeft" class="column-left">
+            <div class="mini-image-container">
+              <div class="mini-image">
+                <img onmouseover="show(this)" onmouseout="hide(this)" onclick="imageFull(this)" src="IMG6.png" name="Untitled #6, Colored Markers x Canvas, 10 Inches x 11 Inches, $100" alt="Image 6">
+              </div>
+            </div>
+            <div class="mini-image-container">
+              <div class="mini-image">
+                <img onmouseover="show(this)" onmouseout="hide(this)" onclick="imageFull(this)" src="IMG14.png" name="Untitled #14, Oil Paint x Canvas, 11 Inches x 13 Inches, $75" alt="Image 14">
+              </div>
+            </div>
+          </div>
+          <div id="columnRight" class="column-right">
+            <div class="mini-image-container">
+              <div class="mini-image">
+                <img onmouseover="show(this)" onmouseout="hide(this)" onclick="imageFull(this)" src="IMG8.png" name="Untitled #8, Colored Pencils x Canvas, 8 Inches x 14 Inches, $50" alt="Image 8">
+              </div>
+            </div>
+            <div class="mini-image-container">
+              <div class="mini-image">
+                <img onmouseover="show(this)" onmouseout="hide(this)" onclick="imageFull(this)" src="IMG12.png" name="Untitled #12, Colored Pencils x Canvas, 10 Inches x 14 Inches, $100" alt="Image 12">
+              </div>
+            </div>
+          </div>
+          <div id="imageContainer" class="image-container">
+            <div class="container-header">
+              <img onclick="showColumns()" src="arrow-left-circle.svg" alt="back">
+            </div>
+            <div class="image-holder">
+              <img id="mainImage" src="" alt="Full Image" data-tilt>
+            </div>
+            <div class="image-information">
+              <h1 id="imageName"></h1>
+              <h2 id="imageSize"></h2>
+              <h2 id="imageMaterials"></h2>
+              <h2 id="imageCost"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu" id="menu">
+        <div class="menu-top" onclick="showSubmenu()">
+          <h1>Art</h1>
+        </div>
+        <div id="subCanvas" class="menu-subitem">
+          <a href="canvas.htm">
+            <h1>Canvas</h1>
+          </a>
+        </div>
+        <div id="subPaper" class="menu-subitem">
+          <a href="paper.htm">
+            <h1>Paper</h1>
+          </a>
+        </div>
+        <div id="subAll" class="menu-subitem">
+          <a href="index.htm">
+            <h1>All</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.htm">
+            <h1>About</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="contact.htm">
+            <h1>Contact</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="watch.htm">
+            <h1>Watch</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="credit.htm">
+            <h1>Credit</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showMenu() {
+        document.getElementById('menu').style.width = 20 + "%";
+        document.getElementById('menu').style.display = "block";
+        document.getElementById('content').style.width = 80 + "%";
+        document.getElementById('menuIcon').style.display = "none";
+      }
+      function showSubmenu() {
+        document.getElementById('subCanvas').style.display = "block";
+        document.getElementById('subPaper').style.display = "block";
+        document.getElementById('subAll').style.display = "block";
+      }
+      function imageFull(img) {
+        document.getElementById('imageContainer').style.display = "flex";
+        document.getElementById('columnLeft').style.display = "none";
+        document.getElementById('columnRight').style.display = "none";
+        document.getElementById('menu').style.width = 0 + "%";
+        document.getElementById('menu').style.display = "none";
+        document.getElementById('content').style.width = 100 + "%";
+        document.getElementById('menuIcon').style.display = "flex";
+        document.getElementById('mainImage').src = img.src;
+        var infoList = img.name.split(",");
+        document.getElementById('imageName').innerHTML = infoList[0];
+        document.getElementById('imageMaterials').innerHTML = infoList[1];
+        document.getElementById('imageSize').innerHTML = infoList[2];
+        document.getElementById('imageCost').innerHTML = infoList[3];
+      }
+      function showColumns() {
+        document.getElementById('imageContainer').style.display = "none";
+        document.getElementById('columnLeft').style.display = "block";
+        document.getElementById('columnRight').style.display = "block";
+        document.getElementById('menu').style.width = 0 + "%";
+        document.getElementById('menu').style.display = "none";
+        document.getElementById('content').style.width = 100 + "%";
+        document.getElementById('menuIcon').style.display = "flex";
+      }
+      function show(img) {
+        img.style.filter = "contrast(150%)";
+      }
+      function hide(img) {
+        img.style.filter = "contrast(100%)";
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  </body>
+</html>

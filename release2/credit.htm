@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Credit</title>
+    <link rel="stylesheet" href="credit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body onload="loadColor()">
+    <div class="main">
+      <div class="content" id="content">
+        <div class="header">
+          <div class="header-title" id="headerTitle">
+            <h1>El Gordo</h1>
+          </div>
+          <div class="header-menu-icon" id="menuIcon">
+            <img src="menu.svg" alt="" onclick="showMenu()">
+          </div>
+        </div>
+        <div class="credits">
+          <div class="credits-title">
+            <h1>Credit</h1>
+          </div>
+          <div class="credits-text">
+            <p id="creditsText">I give Worthy Rae the appropriate rights to use my artwork on this website</p>
+            <h1>-El Gordo</h1>
+          </div>
+          <div class="credits-code">
+            <p>I have abided by the Babson Code of Ethics in this work and pledge to be better than that which would compromise my integrity</p>
+          </div>
+        </div>
+        <div class="fun">
+          <div class="progress" id="prg">
+            <div class="bar" id="bar">
+              <div class="slide" id="slide">
+
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button type="button" name="button">Press</button>
+          </div>
+          <div class="table-container" id="tc">
+            <table>
+              <tr>
+                <th colspan="2">Why Tables R Awesome!</th>
+              </tr>
+              <tr>
+                <td rowspan="2">
+                  Tables r fun
+                </td>
+                <td>
+                  Tables r cool
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Tables r great
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="list-container" name="lc">
+            <ul>
+              <li>Lists r great</li>
+              <li>Lists r cool</li>
+              <li>Lists r awesome
+                <ul>
+                  <li>Lists r amazing</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="image-map">
+            <img src="smile.jpg" alt="smile" usemap="#happymap" width="500" height="500">
+            <map name="happymap">
+              <area shape="rect" coords="0,0,250,250" alt="About" href="about.htm">
+              <area shape="rect" coords="250,250,500,500" alt="Contact" href="contact.htm">
+            </map>
+          </div>
+
+        </div>
+      </div>
+      <div class="menu" id="menu">
+        <div class="menu-top" onclick="showSubmenu()">
+          <h1>Art</h1>
+        </div>
+        <div id="subCanvas" class="menu-subitem">
+          <a href="canvas.htm">
+            <h1>Canvas</h1>
+          </a>
+        </div>
+        <div id="subPaper" class="menu-subitem">
+          <a href="paper.htm">
+            <h1>Paper</h1>
+          </a>
+        </div>
+        <div id="subAll" class="menu-subitem">
+          <a href="index.htm">
+            <h1>All</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.htm">
+            <h1>About</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="contact.htm">
+            <h1>Contact</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="watch.htm">
+            <h1>Watch</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="credit.htm">
+            <h1>Credit</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      var id = null;
+      function showMenu() {
+        document.getElementById('menu').style.width = 20 + "%";
+        document.getElementById('menu').style.display = "block";
+        document.getElementById('content').style.width = 80 + "%";
+        document.getElementById('menuIcon').style.display = "none";
+      }
+      function showSubmenu() {
+        document.getElementById('subCanvas').style.display = "block";
+        document.getElementById('subPaper').style.display = "block";
+        document.getElementById('subAll').style.display = "block";
+      }
+      function loadColor() {
+        var colorList = ["purple", "blue", "green", "red", "orange"];
+        var color = colorList[Math.floor(Math.random() * colorList.length)];
+        document.getElementById('creditsText').style.color = color;
+        var widthVal = 0;
+        clearInterval(id);
+        id = setInterval(frame, 50);
+        function frame() {
+          if (widthVal == 100) {
+            clearInterval(id);
+          } else {
+            widthVal++;
+            document.getElementById('slide').style.width = widthVal + "%";
+          }
+        }
+      }
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $("img").toggle();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("button").hover(function(){
+          $("#prg").hide();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#creditsText").click(function(){
+          $("p").css("background-color", "lightgray");
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#creditsText").hover(function(){
+          $("p").css("font-size", "48px");
+        });
+      });
+    </script>
+  </body>
+</html>

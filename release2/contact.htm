@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="content" id="content">
+        <div class="header">
+          <div class="header-title" id="headerTitle">
+            <h1>El Gordo</h1>
+          </div>
+          <div class="header-menu-icon" id="menuIcon">
+            <img src="menu.svg" alt="" onclick="showMenu()">
+          </div>
+        </div>
+        <div class="contact">
+          <div class="contact-title">
+            <h1>Contact</h1>
+          </div>
+          <div class="socials">
+            <div class="instagram">
+              <a href="https://www.instagram.com/gordocallanan/">
+                <img alt="ig" src="instagram.svg">
+              </a>
+            </div>
+            <div class="socials-spacer">
+
+            </div>
+            <div class="facebook">
+              <a href="https://www.facebook.com/GordoOreo">
+                <img alt="fb" src="facebook.svg">
+              </a>
+            </div>
+          </div>
+          <form name="contact-form" action=”mailto:wrae1@babson.edu” onsubmit="return validateForm()" method="post">
+            <div class="name-input">
+              <input type="text" name="name" placeholder="Name" required>
+            </div>
+            <div class="email-input">
+              <input type="text" name="email" placeholder="Email" required>
+            </div>
+            <div class="response-type">
+              <select name="response">
+                <option value="general">General Inquiry</option>
+                <option value="commission">Commission</option>
+                <option value="press">Press</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="response-text">
+              <textarea name="message" placeholder="Message" required></textarea>
+            </div>
+            <div class="email-check">
+              <input type="checkbox" name="emailCheck">
+              <h1>Select to recieve email updates</h1>
+            </div>
+            <div class="submit-button">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="menu" id="menu">
+        <div class="menu-top" onclick="showSubmenu()">
+          <h1>Art</h1>
+        </div>
+        <div id="subCanvas" class="menu-subitem">
+          <a href="canvas.htm">
+            <h1>Canvas</h1>
+          </a>
+        </div>
+        <div id="subPaper" class="menu-subitem">
+          <a href="paper.htm">
+            <h1>Paper</h1>
+          </a>
+        </div>
+        <div id="subAll" class="menu-subitem">
+          <a href="index.htm">
+            <h1>All</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.htm">
+            <h1>About</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="contact.htm">
+            <h1>Contact</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="watch.htm">
+            <h1>Watch</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="credit.htm">
+            <h1>Credit</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showMenu() {
+        document.getElementById('menu').style.width = 20 + "%";
+        document.getElementById('menu').style.display = "block";
+        document.getElementById('content').style.width = 80 + "%";
+        document.getElementById('menuIcon').style.display = "none";
+      }
+      function showSubmenu() {
+        document.getElementById('subCanvas').style.display = "block";
+        document.getElementById('subPaper').style.display = "block";
+        document.getElementById('subAll').style.display = "block";
+      }
+      function validateForm() {
+        var name = document.forms["contact-form"]["name"].value;
+        var email = document.forms["contact-form"]["email"].value;
+        var response = document.forms["contact-form"]["response"].value;
+        var message = document.forms["contact-form"]["message"].value;
+        if (email.includes("@") == false) {
+          alert("Enter Valid Email");
+          return false;
+        } else if (message.length <= 25) {
+          alert("Enter More Detailed Message");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main {
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0px 25px 100px 25px;
+}
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-title {
+  width: 75%;
+  margin: 25px 0px 0px 0px;
+  box-sizing: border-box;
+
+}
+.header-title h1 {
+  font-size: 48px;
+  font-weight: normal;
+}
+.header-menu-icon {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 25px 0px 0px 0px;
+  box-sizing: border-box;
+}
+.video-section {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.video-title {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-title h1 {
+  font-size: 48px;
+  font-weight: normal;
+}
+.video {
+  width: 100%;
+  margin-top: 25px;
+  box-sizing: border-box;
+}
+video {
+  width: 100%;
+}
+.menu {
+  width: 0%;
+  text-align: right;
+  background-color: white;
+  display: none;
+  padding: 0px 25px;
+}
+.menu-top {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+.menu-top h1 {
+  font-size: 48px;
+  color: black;
+  font-weight: normal;
+  cursor: pointer;
+}
+.menu-item {
+  display: block;
+  margin-top: 50px;
+}
+.menu-item h1 {
+  font-size: 48px;
+  color: black;
+  font-weight: normal;
+}
+.menu-item a {
+  text-decoration: none;
+}
+.menu-subitem {
+  display: none;
+  margin-top: 12.5px;
+}
+.menu-subitem h1 {
+  font-size: 24px;
+  color: black;
+  font-weight: normal;
+}
+.menu-subitem a {
+  text-decoration: none;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="content" id="content">
+        <div class="header">
+          <div class="header-title" id="headerTitle">
+            <h1>El Gordo</h1>
+          </div>
+          <div class="header-menu-icon" id="menuIcon">
+            <img src="menu.svg" alt="" onclick="showMenu()">
+          </div>
+        </div>
+        <div class="about">
+          <div class="artist-image">
+            <img onmouseover="" src="profile.png" alt="El Gordo">
+          </div>
+          <div class="info-main">
+            <div class="info-location">
+              <div class="location-icon">
+                <img alt="ig" src="map-pin.svg">
+              </div>
+              <div class="location-text">
+                <h2>Cambridge, Ma</h2>
+              </div>
+            </div>
+            <div class="info-spacer">
+
+            </div>
+            <div class="info-education">
+              <div class="education-icon">
+                <img alt="ig" src="award.svg">
+              </div>
+              <div class="location-text">
+                <h2>Art Institute of Boston</h2>
+              </div>
+            </div>
+            <div class="info-spacer">
+
+            </div>
+            <div class="info-time">
+              <div class="time-icon">
+                <img alt="ig" src="clock.svg">
+              </div>
+              <div class="time-text">
+                <h2>10 Years Experience</h2>
+              </div>
+            </div>
+            <div class="info-spacer">
+
+            </div>
+            <div class="info-art">
+              <div class="art-icon">
+                <img alt="ig" src="edit-2.svg">
+              </div>
+              <div class="art-text">
+                <h2>2D Drawing & Painting</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bio-section">
+          <div class="bio-title">
+            <h1>Biography</h1>
+          </div>
+          <div class="bio-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu" id="menu">
+        <div class="menu-top" onclick="showSubmenu()">
+          <h1>Art</h1>
+        </div>
+        <div id="subCanvas" class="menu-subitem">
+          <a href="canvas.htm">
+            <h1>Canvas</h1>
+          </a>
+        </div>
+        <div id="subPaper" class="menu-subitem">
+          <a href="paper.htm">
+            <h1>Paper</h1>
+          </a>
+        </div>
+        <div id="subAll" class="menu-subitem">
+          <a href="index.htm">
+            <h1>All</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.htm">
+            <h1>About</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="contact.htm">
+            <h1>Contact</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="watch.htm">
+            <h1>Watch</h1>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="credit.htm">
+            <h1>Credit</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showMenu() {
+        document.getElementById('menu').style.width = 20 + "%";
+        document.getElementById('menu').style.display = "block";
+        document.getElementById('content').style.width = 80 + "%";
+        document.getElementById('menuIcon').style.display = "none";
+      }
+      function showSubmenu() {
+        document.getElementById('subCanvas').style.display = "block";
+        document.getElementById('subPaper').style.display = "block";
+        document.getElementById('subAll').style.display = "block";
+      }
+    </script>
+  </body>
+</html>
